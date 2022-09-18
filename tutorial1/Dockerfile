@@ -1,7 +1,7 @@
-#This is a sample Image
 FROM ubuntu
-MAINTAINER motalib.uap@gmail.com
-
 RUN apt-get update
-RUN apt-get install -y nginx
-CMD ["echo","Image created"]
+RUN apt-get install -y apache2
+RUN apt-get install -y apache2-utils
+RUN apt-get clean
+EXPOSE 80
+CMD ["apachectl", "-D", "FOREGROUND"]
